@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>Neue Filme</p>
+<ul data-bind="foreach: { data: newMovies, as: 'movieDetailWidget' }">
+    <li data-bind="text: name"></li>
+</ul>
+<br>
+<p>Beliebte Filme</p>
+<ul data-bind="foreach: { data: popularMovies, as: 'movieDetailWidget' }">
+    <li data-bind="text: name"></li>
+</ul>
+<br>
+<p>Nochmal Ansehen</p>
+<movie-detail-widget></movie-detail-widget>
+<ul data-bind="foreach: { data: watchAgain, as: 'movieDetailWidget' }">
+    <li>
+        <span data-bind="text: name"></span>
+    </li>
+</ul>
+<script type='text/javascript' src='assets/scripts/knockout-3.5.1.js'></script>
+<script src="assets/scripts/require.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
