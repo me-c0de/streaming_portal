@@ -7,11 +7,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
 
     <title>Hello, world!</title>
 </head>
 
-<body>
+<body class="background">
 <h1>Disney-</h1>
 <div class="container-fluid">
     <!-- Movie Overview -->
@@ -38,17 +39,17 @@
         </div>
     </div>
     <!-- Chosen Movie -->
-    <div data-bind="with: chosenFilm()">
+    <div data-bind="with: chosenFilm()" class="details-center">
         <div class="row">
-            <button data-bind="click: $root.goToMainMenu">Zurück</button>
+            <button data-bind="click: $root.goToMainMenu" class="btn btn-outline-primary free-button">Zurück</button>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-sm-">
                 <img data-bind="attr:{src: image}" style="height: 60rem" src="" alt="">
             </div>
             <div class="col" data-bind="using: movieDetails">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-1">
                         <p>Beschreibung:</p>
                     </div>
                     <div class="col">
@@ -56,7 +57,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-1">
                         <p>Darsteller:</p>
                     </div>
                     <div class="col">
@@ -64,7 +65,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-1">
                         <p>Regisseur:</p>
                     </div>
                     <div class="col">
@@ -72,7 +73,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-1">
                         <p>Erscheinungsjahr:</p>
                     </div>
                     <div class="col">
