@@ -14,10 +14,11 @@
 <body>
 <h1>Disney-</h1>
 <div class="container-fluid">
-    <div data-bind="foreach: categories">
+    <!-- Movie Overview -->
+    <div data-bind="hidden: chosenFilm, foreach: categories">
         <h3 data-bind="text: category"></h3>
-        <div class="row p-5"  data-bind="foreach: movies">
-            <div class="col-lg-2 p-5">
+        <div class="row p-5" data-bind="foreach: movies">
+            <div class="col-lg-2 p-5" data-bind="click: $root.goToMovie">
                 <button data-bind="click: showDetails">
                     <h4 data-bind="text: name"></h4>
                     <img style="height: 15rem" data-bind="attr:{src: image}" src="" alt="">
@@ -31,6 +32,51 @@
                             <li data-bind="text: $data"></li>
                         </ul>
                         <p>Beschreibung: <span data-bind="text: description"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Chosen Movie -->
+    <div data-bind="with: chosenFilm()">
+        <div class="row">
+            <button data-bind="click: $root.goToMainMenu">Zurück</button>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img data-bind="attr:{src: image}" style="height: 60rem" src="" alt="">
+            </div>
+            <div class="col" data-bind="using: movieDetails">
+                <div class="row">
+                    <div class="col">
+                        <p>Beschreibung:</p>
+                    </div>
+                    <div class="col">
+                        <p data-bind="text: description"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Darsteller:</p>
+                    </div>
+                    <div class="col">
+                        <span data-bind="text: concatenatedPerformer"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Regisseur:</p>
+                    </div>
+                    <div class="col">
+                        <p data-bind="text: director"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Erscheinungsjahr:</p>
+                    </div>
+                    <div class="col">
+                        <p data-bind="text: releaseYear"></p>
                     </div>
                 </div>
             </div>

@@ -15,6 +15,13 @@ function MovieDetailsModel(director, performer, releaseYear, description){
     self.performer = performer;
     self.releaseYear = releaseYear;
     self.description = description;
+    self.concatenatedPerformer = ko.computed(function() {
+        var string = "";
+        for (const element of self.performer) {
+            string += element + ", ";
+        }
+        return string.substr(0, string.length -2);
+    });
 }
 
 function CategoryModel(category, movies){
@@ -25,10 +32,11 @@ function CategoryModel(category, movies){
 
 function StreamingViewModel(){
     var self = this;
+    self.chosenFilm = ko.observable();
     self.categories = ko.observableArray([
         new CategoryModel("Neue Filme", ko.observableArray([
             new MovieModel("Avengers: Age of Ultron", "https://i.weltbild.de/p/avengers-2-age-of-ultron-303199916.jpg?v=1&wp=_max",
-                new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"],2012, "Description")),
+                new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"],2012, "Gute Absichten richten verheerenden Schaden an, als Tony Stark unwissentlich Ultron, ein K.I.-Monster schafft, das durch Massenvernichtung den Weltfrieden erreichen will.")),
             new MovieModel("Avengers: Age of Ultron", "https://i.weltbild.de/p/avengers-2-age-of-ultron-303199916.jpg?v=1&wp=_max",
                 new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"],2012, "Description")),
             new MovieModel("Avengers: Age of Ultron", "https://i.weltbild.de/p/avengers-2-age-of-ultron-303199916.jpg?v=1&wp=_max",
@@ -63,6 +71,14 @@ function StreamingViewModel(){
                 new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"],2012, "Description")),
         ]))
     ])
+
+    self.goToMovie = function(movie) {
+        self.chosenFilm(movie);
+    }
+
+    self.goToMainMenu = function() {
+        self.chosenFilm(null);
+    }
 };
 
 
