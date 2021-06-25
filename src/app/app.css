@@ -11,4 +11,66 @@
 .background {
     background-color: #272b3a;
     color: white;
+    overflow-y: scroll;
+}
+
+
+.text {
+    color: black;
+    font-size: 0.6em;
+}
+
+.text .info{
+    font-size: 0.8em;
+}
+
+
+.text .releaseYear{
+    font-size: 0.7em;
+}
+
+.text .description{
+    font-size: 0.7em;
+}
+
+.item {
+    display: flex;
+    transition: transform 500ms;
+    cursor: pointer;
+    object-fit: contain;
+    padding:0px !important;
+    border: none !important;
+
+}
+
+.row:hover .item {
+    transform: translateX(-25%);
+}
+
+.item:hover ~ .item {
+    transform: translateX(25%);
+}
+
+.row .item:hover {
+    transform: scale(1.5);
+    z-index: 1;
+}
+
+body {
+    overflow: hidden;
+}
+
+.item img {
+    object-fit: contain;
+}
+
+.card-body{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+
+.item:hover .card-body{
+    background: white;
 }

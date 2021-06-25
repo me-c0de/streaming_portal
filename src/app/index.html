@@ -19,25 +19,24 @@
     <div data-bind="hidden: chosenFilm, foreach: categories">
         <h3 data-bind="text: category"></h3>
         <div class="row p-5" data-bind="foreach: movies">
-            <div class="col-lg-2 p-5" data-bind="click: $root.goToMovie">
-                <button data-bind="click: showDetails">
-                    <h4 data-bind="text: name"></h4>
-                    <img style="height: 15rem" data-bind="attr:{src: image}" src="" alt="">
-                </button>
-                <div data-bind="if: detailsShown">
-                    <div data-bind="using: movieDetails">
-                        <p>Regisseur: <span data-bind="text: director"></span></p>
-                        <p>Erscheinungsjahr: <span data-bind="text: releaseYear"></span></p>
-                        <p>Darsteller:</p>
-                        <ul data-bind="foreach: { data: performer, as: 'performer' }">
-                            <li data-bind="text: $data"></li>
-                        </ul>
-                        <p>Beschreibung: <span data-bind="text: description"></span></p>
-                    </div>
+            <div class="card item col-lg-2"
+                 data-bind="click: $root.goToMovie, event: { mouseover: showDetails, mouseout: showDetails }">
+                <img class="card-img-top" data-bind="attr:{src: image}">
+                <div class="text card-body" data-bind="if: detailsShown">
+                    <span class="card-title" data-bind="text: name"></span>
+                    <span class="card-text " data-bind="using: movieDetails">
+                        <span class="releaseYear" data-bind="text: releaseYear"></span>
+                        <div class="description py-2" data-bind="text: description"></div>
+                        <div class="info">Regisseur: <span data-bind="text: director"></span></div>
+                        <div class="info">Besetzung:
+                            <span data-bind="text: concatenatedPerformer"></span>
+                        </div>
+                    </span>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <!-- Chosen Movie -->
     <div data-bind="with: chosenFilm()" class="details-center">
         <div class="row">
