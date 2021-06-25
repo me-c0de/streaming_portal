@@ -22,7 +22,8 @@ h2 {
 .background {
     background-color: #272b3a;
     color: white;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto
 }
 
 .text {
@@ -43,7 +44,7 @@ h2 {
 }
 
 
-.swiper-slide{
+.swiper-slide {
     transition: 250ms all;
     display: flex;
     cursor: pointer;
@@ -51,23 +52,20 @@ h2 {
     padding: 0px !important;
     border: none !important;
 }
-.swiper-slide:hover{
+
+.swiper-slide:hover {
     transform: scale(1.2);
     z-index: 1 !important;
-    overflow:visible !important;
+    overflow: visible !important;
 }
 
-.swiper-slide:hover .card-body{
+.swiper-slide:hover .card-body {
     background: #33394d;
     color: white;
 }
 
-.swiper-slide:first-child:hover{
-    margin:0 40px;
-}
-
-.swiper-slide:last-child:hover{
-    margin:0 -40px;
+.swiper-slide:last-child:hover {
+    margin: 0 -40px;
 }
 
 
@@ -86,6 +84,6 @@ h2 {
     width: 100%;
 }
 
-.swiper-container{
+.swiper-container {
     overflow: unset !important;
 }

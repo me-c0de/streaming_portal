@@ -20,7 +20,7 @@
     <!-- Movie Overview -->
     <div data-bind="hidden: chosenFilm, foreach: categories">
         <h3 data-bind="text: category"></h3>
-        <div class="swiper-container">
+        <div class="swiper-container" data-bind="style: { 'z-index': index }">
             <div class="margin-3 swiper-wrapper page" data-bind="foreach: movies">
                 <div class="card col-lg-2 swiper-slide"
                      data-bind="click: $root.goToMovie, event: { mouseover: showDetails, mouseout: showDetails }">
@@ -114,7 +114,6 @@
         slidesPerView: 6,
         slidesPerGroup: 5,
         direction: 'horizontal',
-        loop: true,
 
         // Navigation arrows
         navigation: {
