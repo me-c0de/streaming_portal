@@ -2,6 +2,10 @@ h1 {
     margin: 5px;
 }
 
+h2 {
+    margin-left: 15px;
+}
+
 .details-center {
     margin-left: 15px;
     margin-right: 15px;
