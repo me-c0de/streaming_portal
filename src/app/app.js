@@ -85,6 +85,16 @@ function StreamingViewModel() {
                 new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"], 2012, "Description")),
             new MovieModel("Avengers: Age of Ultron", "https://a-static.besthdwallpaper.com/avengers-endgame-tapete-3840x2160-39967_54.jpg",
                 new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"], 2012, "Description")),
+            new MovieModel("Avengers: Age of Ultron", "https://a-static.besthdwallpaper.com/avengers-endgame-tapete-3840x2160-39967_54.jpg",
+                new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"], 2012, "Description")),
+            new MovieModel("Avengers: Age of Ultron", "https://a-static.besthdwallpaper.com/avengers-endgame-tapete-3840x2160-39967_54.jpg",
+                new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"], 2012, "Description")),
+            new MovieModel("Avengers: Age of Ultron", "https://a-static.besthdwallpaper.com/avengers-endgame-tapete-3840x2160-39967_54.jpg",
+                new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"], 2012, "Description")),
+            new MovieModel("Avengers: Age of Ultron", "https://a-static.besthdwallpaper.com/avengers-endgame-tapete-3840x2160-39967_54.jpg",
+                new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"], 2012, "Description")),
+            new MovieModel("Avengers: Age of Ultron", "https://a-static.besthdwallpaper.com/avengers-endgame-tapete-3840x2160-39967_54.jpg",
+                new MovieDetailsModel("Joss Whedon", ["RDJ", "Chris Evans", "Marc Ruffalo"], 2012, "Description")),
         ]))
     ])
 
