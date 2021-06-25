@@ -72,5 +72,6 @@ body {
 
 
 .item:hover .card-body{
-    background: white;
+    background:   #33394d;
+    color: white;
 }
