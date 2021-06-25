@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"/>
 
     <title>Hello, world!</title>
 </head>
@@ -18,13 +20,15 @@
     <!-- Movie Overview -->
     <div data-bind="hidden: chosenFilm, foreach: categories">
         <h3 data-bind="text: category"></h3>
-        <div class="row margin-3" data-bind="foreach: movies">
-            <div class="card item col-lg-2"
-                 data-bind="click: $root.goToMovie, event: { mouseover: showDetails, mouseout: showDetails }">
-                <img class="card-img-top" data-bind="attr:{src: image}">
-                <div class="text card-body" data-bind="if: detailsShown">
-                    <span class="card-title" data-bind="text: name"></span>
-                    <span class="card-text " data-bind="using: movieDetails">
+        <div class="swiper-container" data-bind="style: { 'z-index': index }">
+            <div class="margin-3 swiper-wrapper page" data-bind="foreach: movies">
+                <div class="card col-lg-2 swiper-slide"
+                     data-bind="click: $root.goToMovie, event: { mouseover: showDetails, mouseout: showDetails }">
+                    <div class="item">
+                        <img class="card-img-top" data-bind="attr:{src: image}">
+                        <div class="text card-body" data-bind="if: detailsShown">
+                            <span class="card-title" data-bind="text: name"></span>
+                            <span class="card-text " data-bind="using: movieDetails">
                         <span class="releaseYear" data-bind="text: releaseYear"></span>
                         <div class="description py-2" data-bind="text: description"></div>
                         <div class="info">Regisseur: <span data-bind="text: director"></span></div>
@@ -32,8 +36,12 @@
                             <span data-bind="text: concatenatedPerformer"></span>
                         </div>
                     </span>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </div>
 </div>
@@ -88,9 +96,30 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
 <script src="app.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script>
+    const swiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        slidesPerView: 6,
+        slidesPerGroup: 5,
+        direction: 'horizontal',
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 </body>

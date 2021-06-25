@@ -22,7 +22,8 @@ h2 {
 .background {
     background-color: #272b3a;
     color: white;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto
 }
 
 .text {
@@ -42,31 +43,31 @@ h2 {
     font-size: 0.7em;
 }
 
-.item {
+
+.swiper-slide {
+    transition: 250ms all;
     display: flex;
-    transition: transform 500ms;
     cursor: pointer;
     object-fit: contain;
     padding: 0px !important;
     border: none !important;
 }
 
-.row:hover .item {
-    transform: translateX(-25%);
+.swiper-slide:hover {
+    transform: scale(1.2);
+    z-index: 1 !important;
+    overflow: visible !important;
 }
 
-.item:hover ~ .item {
-    transform: translateX(25%);
+.swiper-slide:hover .card-body {
+    background: #33394d;
+    color: white;
 }
 
-.row .item:hover {
-    transform: scale(1.5);
-    z-index: 1;
+.swiper-slide:last-child:hover {
+    margin: 0 -40px;
 }
 
-body {
-    overflow: hidden;
-}
 
 .item img {
     object-fit: contain;
@@ -78,12 +79,11 @@ body {
     width: 100%;
 }
 
-.item:hover .card-body {
-    background: #33394d;
-    color: white;
-}
-
 .image-details-page {
     max-height: 60rem;
     width: 100%;
+}
+
+.swiper-container {
+    overflow: unset !important;
 }
