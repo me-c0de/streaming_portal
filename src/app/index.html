@@ -25,17 +25,19 @@
                 <div class="card col-lg-2 swiper-slide"
                      data-bind="click: $root.goToMovie, event: { mouseover: showDetails, mouseout: showDetails }">
                     <div class="item">
-                        <img class="card-img-top" data-bind="attr:{src: image}">
+                        <div data-bind="if: image">
+                            <img class="card-img-top" data-bind="attr:{src: image}">
+                        </div>
                         <div class="text card-body" data-bind="if: detailsShown">
                             <span class="card-title" data-bind="text: name"></span>
                             <span class="card-text " data-bind="using: movieDetails">
-                        <span class="releaseYear" data-bind="text: releaseYear"></span>
-                        <div class="description py-2" data-bind="text: description"></div>
-                        <div class="info">Regisseur: <span data-bind="text: director"></span></div>
-                        <div class="info">Besetzung:
-                            <span data-bind="text: concatenatedPerformer"></span>
-                        </div>
-                    </span>
+                                <span class="releaseYear" data-bind="text: releaseYear"></span>
+                                <div class="description py-2" data-bind="text: description"></div>
+                                <div class="info">Regisseur: <span data-bind="text: director"></span></div>
+                                <div class="info">Besetzung:
+                                    <span data-bind="text: concatenatedPerformer"></span>
+                                </div>
+                             </span>
                         </div>
                     </div>
                 </div>

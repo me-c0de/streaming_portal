@@ -87,3 +87,7 @@ h2 {
 .swiper-container {
     overflow: unset !important;
 }
+
+.swiper-slide:last-child {
+    pointer-events: none;
+}
