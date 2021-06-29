@@ -26,7 +26,7 @@
                      data-bind="click: $root.goToMovie, event: { mouseover: showDetails, mouseout: showDetails }">
                     <div class="item">
                         <div data-bind="if: image">
-                            <img class="card-img-top" data-bind="attr:{src: image}">
+                            <img class="image-size card-img-top" data-bind="attr:{src: image}">
                         </div>
                         <div class="text card-body" data-bind="if: detailsShown">
                             <span class="card-title" data-bind="text: name"></span>
