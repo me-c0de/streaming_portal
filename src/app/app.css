@@ -90,7 +90,7 @@ h2 {
     pointer-events: none;
 }
 
-.image-size {
-    aspect-ratio: 1.78 / 1;
+.image-bg {
     background-color: #272b3a;
+    max-height: 236px;
 }

@@ -1,10 +1,9 @@
 /*
-new MovieModel("Titel", "URL_TO_IMAGE",
-        new MovieDetailsModel("Regisseur", ["Darsteller 1", "Darsteller 2", "Darsteller 3"], 2015, "Beschreibung")),
+new MovieModel("Dummy_Titel", "Dummy_Url_zum_Bild", new MovieDetailsModel("Dummy_Regisseur", ["Dummy_Darsteller 1", "Dummy_Darsteller 2", "Dummy_Darsteller 3"], 2015, "Dummy_Beschreibung")),
  */
 
 const newMovies = new CategoryModel("Neue Filme", 5, ko.observableArray([
-    new MovieModel("Avengers: Age of Ultron", "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B6D17EE56247DB49AC11AC031EB2FB43189D230EF3592C7C4808F9B0EB363FCD/scale?width=1200&aspectRatio=1.78&format=jpeg",
+    new MovieModel("Avengers: Age of Ultron", "https://i.weltbild.de/p/avengers-endgame-281338462.jpg?v=1&wp=_max",
         new MovieDetailsModel("Joss Whedon", ["Robert Downey Jr.", "Chris Evans", "Marc Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner"], 2015, "Gute Absichten richten verheerenden Schaden an, als Tony Stark unwissentlich Ultron, ein K.I.-Monster schafft, das durch Massenvernichtung den Weltfrieden erreichen will.")),
 
     new MovieModel("The Avengers", "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F48C2D492B31714C94AB0DD0BCF3D3CA7EAFB658F922BF313011C9D308B9B494/scale?width=1200&aspectRatio=1.78&format=jpeg",
@@ -29,7 +28,7 @@ const newMovies = new CategoryModel("Neue Filme", 5, ko.observableArray([
         new MovieDetailsModel("Gareth Edwards", ["Felicity Jones", "Diego Luna", "Ben Mendelsohn", "Donnie Yen", "Mads Mikkelsen", "Alan Tudyk"], 2016, "Lucasfilm bringt uns mit Rogue One: A Star Wars Story ein episches Abenteuer. In einer Zeit des Konflikts schließt sich eine Gruppe von ungewöhnlichen Helden zusammen, um die Pläne für den Todesstern, die ultimative Waffe des Imperiums, zu stehlen. Dieses Schlüsselereignis in der Star-Wars-Timeline bringt ganz normale Menschen zusammen, die Teil von etwas viel Größerem werden. Einige Sequenzen enthalten Blitzlicht-Effekte, die sich auf lichtempfindliche Zuschauer auswirken können.")),
 ]));
 
-const hotMovies = new CategoryModel("Beliebte Filme", 4, ko.observableArray([
+const popularMovies = new CategoryModel("Beliebte Filme", 4, ko.observableArray([
     new MovieModel("Rogue One: A Star Wars Story", "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F5D8C3E9CC39E61A6CA9DD0B60945F3CF72280352BA814A525B863A47B937E88/scale?width=1200&aspectRatio=1.78&format=jpeg",
         new MovieDetailsModel("Gareth Edwards", ["Felicity Jones", "Diego Luna", "Ben Mendelsohn", "Donnie Yen", "Mads Mikkelsen", "Alan Tudyk"], 2016, "Lucasfilm bringt uns mit Rogue One: A Star Wars Story ein episches Abenteuer. In einer Zeit des Konflikts schließt sich eine Gruppe von ungewöhnlichen Helden zusammen, um die Pläne für den Todesstern, die ultimative Waffe des Imperiums, zu stehlen. Dieses Schlüsselereignis in der Star-Wars-Timeline bringt ganz normale Menschen zusammen, die Teil von etwas viel Größerem werden. Einige Sequenzen enthalten Blitzlicht-Effekte, die sich auf lichtempfindliche Zuschauer auswirken können.")),
 
@@ -130,9 +129,9 @@ function StreamingViewModel() {
     var self = this;
     self.chosenFilm = ko.observable();
     newMovies.movies.push(emptyModel);
-    hotMovies.movies.push(emptyModel);
+    popularMovies.movies.push(emptyModel);
     watchAgain.movies.push(emptyModel);
-    self.categories = ko.observableArray([newMovies, hotMovies, watchAgain])
+    self.categories = ko.observableArray([newMovies, popularMovies, watchAgain])
 
     self.goToMovie = function (movie) {
         self.chosenFilm(movie);
