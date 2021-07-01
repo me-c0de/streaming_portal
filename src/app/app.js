@@ -3,7 +3,7 @@ new MovieModel("Dummy_Titel", "Dummy_Url_zum_Bild", new MovieDetailsModel("Dummy
  */
 
 const newMovies = new CategoryModel("Neue Filme", 5, ko.observableArray([
-    new MovieModel("Avengers: Age of Ultron", "https://i.weltbild.de/p/avengers-endgame-281338462.jpg?v=1&wp=_max",
+    new MovieModel("Avengers: Age of Ultron", "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B6D17EE56247DB49AC11AC031EB2FB43189D230EF3592C7C4808F9B0EB363FCD/scale?width=1200&aspectRatio=1.78&format=jpeg",
         new MovieDetailsModel("Joss Whedon", ["Robert Downey Jr.", "Chris Evans", "Marc Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner"], 2015, "Gute Absichten richten verheerenden Schaden an, als Tony Stark unwissentlich Ultron, ein K.I.-Monster schafft, das durch Massenvernichtung den Weltfrieden erreichen will.")),
 
     new MovieModel("The Avengers", "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F48C2D492B31714C94AB0DD0BCF3D3CA7EAFB658F922BF313011C9D308B9B494/scale?width=1200&aspectRatio=1.78&format=jpeg",
